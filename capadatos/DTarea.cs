@@ -69,7 +69,7 @@ namespace capadatos
                 ParTitulo.ParameterName = "@titulo";
                 ParTitulo.SqlDbType = SqlDbType.NVarChar;
                 ParTitulo.Size = 1024;
-                ParTitulo.Value = proyecto.Titulo;
+                ParTitulo.Value = tarea.Titulo;
                 SqlCmd.Parameters.Add(ParTitulo);
 
 

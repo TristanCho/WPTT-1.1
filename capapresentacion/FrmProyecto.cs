@@ -20,7 +20,7 @@ namespace capapresentacion
             InitializeComponent();
             btnEliminarProyecto.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
             mostrarproyectos();
-            convertirWidget();
+            quitarBordes();
         }
 
         private void mensajeok(string mensaje)
@@ -36,7 +36,7 @@ namespace capapresentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            mostrarproyectos();
+            //mostrarproyectos();
             this.FormClosed += new FormClosedEventHandler(cerrarX);
         }
 
@@ -57,12 +57,6 @@ namespace capapresentacion
 
         }
 
-
-
-
-
-
-
         public FrmPrincipal frmparent;
         //private object id;
 
@@ -76,10 +70,7 @@ namespace capapresentacion
             System.Windows.Forms.Application.ExitThread();
         }
 
-
-
-
-        private void convertirWidget()
+        private void quitarBordes()
         {
             MaximizeBox = false;
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -87,8 +78,6 @@ namespace capapresentacion
             ShowInTaskbar = false;
             this.Text = String.Empty;
             this.ControlBox = false;
-
-
         }
         /*Utilizado para mover el panel atraves de la pantalla*/
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -135,16 +124,6 @@ namespace capapresentacion
             {
                 FrmDetalleProyecto detalleProyecto = new FrmDetalleProyecto();
 
-
-                //MessageBox.Show(Convert.ToString(this.dataListProyectos.CurrentRow.Cells["id"].Value));
-                //MessageBox.Show(Convert.ToString(this.dataListProyectos.CurrentRow.Cells["codigo_proyecto"].Value));
-                //MessageBox.Show(Convert.ToString(this.dataListProyectos.CurrentRow.Cells["titulo"].Value));
-                //MessageBox.Show(Convert.ToString(this.dataListProyectos.CurrentRow.Cells["observaciones"].Value));
-                //MessageBox.Show(Convert.ToString(this.dataListProyectos.CurrentRow.Cells["fecha"].Value));
-                    
-
-
-                //detalleProyecto.idproyecto = this.dataListProyectos.CurrentRow.Cells["id"].Value.ToString();
                 detalleProyecto.visualizaDatos(
                     Convert.ToString(this.dataListProyectos.CurrentRow.Cells["id"].Value),                    
                     Convert.ToString(this.dataListProyectos.CurrentRow.Cells["codigo_proyecto"].Value),
@@ -154,16 +133,6 @@ namespace capapresentacion
                     );
                 
                 frmparent.lanzarNuevoProyecto(detalleProyecto);
-
-                //select t.titulo,t.descripcion 
-
-
-                //DataGridViewRow row = dataListProyectos.Rows[e.RowIndex];
-
-                //InventarioReporteFormulario ee = new InventarioReporteFormulario(Convert.ToInt32(row.Cells[0].Value));
-                //ee.Show();
-
-
 
             }
             catch (Exception)

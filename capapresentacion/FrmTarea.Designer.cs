@@ -180,6 +180,7 @@ namespace capapresentacion
             this.Controls.Add(this.cboBuscarTareas);
             this.Name = "FrmTarea";
             this.Text = "FrmTarea";
+            this.Load += new System.EventHandler(this.FrmTarea_Load);
             this.panelRecuadro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListTareas)).EndInit();
             this.ResumeLayout(false);

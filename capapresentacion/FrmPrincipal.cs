@@ -35,7 +35,7 @@ namespace capapresentacion
 
             // btnEliminarProyecto.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
             // mostrarproyectos();
-            //convertirWidget();
+            //quitarBordes();
             //this.ControlBox = false;
         }
 
@@ -254,7 +254,7 @@ private void cboBuscarProyecto_SelectedIndexChanged(object sender, EventArgs e)
 
 }
 
-private void convertirWidget()
+private void quitarBordes()
 {
    MaximizeBox = false;
    FormBorderStyle = FormBorderStyle.FixedDialog;

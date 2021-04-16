@@ -151,7 +151,6 @@ namespace capapresentacion
             }
         }
 
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (!this.txtIdProyecto.Text.Equals(""))
@@ -168,7 +167,9 @@ namespace capapresentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            botones();
+            limpiar();
+            this.Hide();
         }
 
         private void txtIdProyecto_TextChanged(object sender, EventArgs e)

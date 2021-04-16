@@ -12,12 +12,26 @@ namespace capapresentacion
 {
     public partial class FrmTarea : Form
     {
+        public FrmPrincipal frmparent;
         public FrmTarea()
         {
             InitializeComponent();
             
         }
-        public FrmPrincipal frmparent;
+
+        private void FrmTarea_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void mostrartareas()
+        {
+            this.dataListTareas.DataSource = NTareas.mostrarproyectos();
+           // this.ocultarcolumnas();
+           // this.btnEliminarProyecto.Visible = true;
+          //  this.lblTotal.Text = "Número de proyectos: " + Convert.ToString(dataListProyectos.Rows.Count);
+        }
+        
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmparent.lanzarNuevoProyecto(new FrmDetalleTarea());
@@ -34,5 +48,7 @@ namespace capapresentacion
         {
 
         }
+
+  
     }
 }
